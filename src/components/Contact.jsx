@@ -13,7 +13,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const {data} = await axios.post("https://fit-bit-server-1.onrender.com/send/mail",
+      const {data} = await axios.post("https://fit-bit-server-2.onrender.com/send/mail",
       {name,
       email,
       message},
