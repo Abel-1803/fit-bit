@@ -21,7 +21,6 @@ const Contact = () => {
           message,
         },
         {
-          withCredentials: true,
           headers: { "Content-Type": "application/json" },
         }
       );
@@ -32,7 +31,8 @@ const Contact = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      toast.error(error.response.data.message);
+      console.error("Mail sending error:", error); // Debugging log
+      toast.error(error.response?.data?.message || "Failed to send message.");
     }
   };
 
